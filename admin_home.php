@@ -5,6 +5,7 @@
 	die("Could not select database.");
 
 	$username = $_SESSION['username'];
+	//comment
 
 	$admin_profile_query = "select * from admin where username = '$username'";
 	$admin_profile_run=mysqli_query($con,$admin_profile_query);
