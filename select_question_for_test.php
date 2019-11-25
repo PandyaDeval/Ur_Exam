@@ -1,6 +1,6 @@
+
 <style>
-<style>
-table, td, th {  
+table, td, th, tr {  
 border: 1px solid black;
   text-align: left;
 }
@@ -14,7 +14,7 @@ th, td {
   padding: 15px;
 }
 </style>
-</style>
+
 <script>
 var cnt=0;
 function add_que(a){
