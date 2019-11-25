@@ -4,7 +4,7 @@
 		mysqli_select_db($con,"urexam")or
 	die("Could not select database.");
 
-	$username = "jay";
+	$username = $_SESSION['username'];
 
 	$admin_profile_query = "select * from admin where username = '$username'";
 	$admin_profile_run=mysqli_query($con,$admin_profile_query);
