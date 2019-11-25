@@ -19,7 +19,7 @@
 	echo "WELCOME ADMIN - $username     <br><br>";
 	echo "$name<br><br>$email<br><br>     ";
 	echo "<a href = ' add_que.html '>ADD QUESTION</a>     ";
-	echo "<a href = ' add_test.php '>ADD TEST</a>     ";
+	echo "<a href = ' test_adding.php '>ADD TEST</a>     ";
 	echo "<a href = ' see_user.php '>MANIPULATE USER</a>     ";
 	
 
