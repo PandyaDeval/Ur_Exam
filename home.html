@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="zxx">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#signup_button").click(function(){
+    $("#Signup").fadeIn("slow");
+    $("#Login").fadeOut("slow");
+  });
+
+  $("#logup_button").click(function(){
+  	$("#Signup").fadeOut("slow");
+    $("#Login").fadeIn("slow");
+  });
+
+});
+</script>
+<head>
+	<title>Home</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Full Screen Enroll Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+		
+	</script>
+	<!-- css files -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="main-w3ls">
+		<div class="left-content">
+			<div class="w3ls-content">
+				<h1>
+					<a href="index.html"><span class="fa fa-magic"></span>urExam</a>
+				</h1>
+				<h2>One Place For All Your Exams</h2>
+			</div>
+			<div class="copyright" style="margin-top: 200px">
+				<p>&copy; 2019</p>
+			</div>
+		</div>
+		<div class="right-form-agile">
+			<!-- content -->
+			<div id="Signup" style="display: none;">
+			<div class="sub-main-w3">
+				<h3>Signup Now</h3><br>
+				<form action="signup.php" method="post" enctype="multipart/form-data">
+					<div class="form-style-agile">
+						<label>Your Name</label>
+						<div class="pom-agile">
+							<span class="fa fa-user"></span>
+							<input placeholder="Your Name" name="name" type="text" required="">
+						</div>
+					</div>
+					<div class="form-style-agile">
+						<label>Username</label>
+						<div class="pom-agile">
+							<span class="fa fa-user"></span>
+							<input placeholder="Username" name="username" type="text" required="">
+						</div>
+					</div>
+					<div class="form-style-agile">
+						<label>Email</label>
+						<div class="pom-agile">
+							<span class="fa fa-envelope-open"></span>
+							<input placeholder="Email" name="email" type="email" required="">
+						</div>
+					</div>
+					<div class="form-style-agile">
+						<label>Password</label>
+						<div class="pom-agile">
+							<span class="fa fa-key"></span>
+							<input placeholder="Password" name="pass" type="password" id="password1" required="">
+						</div>
+					</div>
+					<div class="form-style-agile">
+						<label>Confirm Password</label>
+						<div class="pom-agile">
+							<span class="fa fa-key"></span>
+							<input placeholder="Confirm Password" name="confpass" type="password" id="password2" required="">
+						</div>
+					</div>
+					<div class="form-style-agile">
+						<label>Account Type</label>
+						<div class="pom-agile">
+							<span></span><input style="margin-left: -40px;" type="radio" name="gender" value="admin" checked="checked"><x style="margin-left: -40px;">Admin</x>
+							<span></span><input style="margin-left: -40px;" type="radio" name="gender" value="student"><x style="margin-left: -40px;">Student</x>
+						</div>
+					</div>
+					<input type="submit" name="signin" value="Submit">
+				</form>
+				<p align="center" style="margin-top: 25px;">Already Have An Account ? </p>
+				<button name="logup_button" id="logup_button">Log In</button>
+			</div>
+		</div>
+		<div id="Login">
+			<div class="sub-main-w3">
+				<h3>Login</h3><br>
+			<form method="post" action="login.php">
+				<div class="form-style-agile">
+						<label>Username</label>
+						<div class="pom-agile">
+							<span class="fa fa-user"></span>
+							<input placeholder="username" name="username" type="text" required="">
+						</div>
+					</div>
+					<div class="form-style-agile">
+						<label>Password</label>
+						<div class="pom-agile">
+							<span class="fa fa-key"></span><input placeholder="Password" type="password" name="password" required>
+						</div>
+					</div>
+					<div class="form-style-agile">
+						<label>Type</label>
+						<div class="pom-agile">
+							<span></span><input style="margin-left: -40px;" type="radio" name="gender" value="admin" checked="checked"><x style="margin-left: -40px;">Admin</x>
+							<span></span><input style="margin-left: -40px;" type="radio" name="gender" value="student"><x style="margin-left: -40px;">Student</x>
+						</div>
+					</div>
+					<input type="submit" value="Submit">
+			</form>
+			<p align="center" style="margin-top: 50px;">OR<p>
+				<button id="signup_button">Sign Up</button>
+		</div>
+		</div>
+		</div>
+	</div>
+	<!-- //content -->
+
+</body>
+
+</html>
