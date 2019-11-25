@@ -29,7 +29,7 @@
     $user_tests_qry = "select * from result where user_id = '$user_id'";
     $user_tests_run = mysqli_query($con,$user_tests_qry);
     $deb = mysqli_num_rows($user_tests_run);
-    echo "<table border = '1px solid black'>";
+    echo "<table border = '1px solid black' style='border-collapse:collapse;'>";
     echo "<tr> <td>TEST NAME</td>   <td>SUBJECT</td>    <td>MARKS</td>  <td>FROM</td> </tr>";
     while( $user_tests_row = mysqli_fetch_array( $user_tests_run ) ){
         
