@@ -17,7 +17,7 @@ $result_subject=mysqli_query($conn,$fetch_subject);
 <select id="sub_select">
             <option value='blank'>Select Subject</option>
             <?php
-            while($row=mysqli_fetch_array($sub_qry_result)){
+                while($row=mysqli_fetch_array($result_subject)){
                 echo "<option value='$row[0]'>$row[0]</option>";
             }
             ?>
