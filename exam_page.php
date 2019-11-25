@@ -24,6 +24,33 @@ $con=mysqli_connect("localhost","root","")or
 
 <html>
     <head>
+        <style>
+            table, td, th {  
+            border: 1px solid black;
+            text-align: left;
+            }
+
+            table {
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            th, td {
+            padding: 15px;
+            width:50%;
+            }
+
+            input[type='submit']{
+            background-color: #a10000;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5mm;
+            
+            }
+        </style>
         <script>
             var counter=<?php echo $exam_qry_result[4];?>*60;
             var sec=0;
@@ -54,7 +81,8 @@ $con=mysqli_connect("localhost","root","")or
             }
         </script>
     </head>
-    <body>
+    <body style="background-image: linear-gradient(#F17153, #F58D63, #f1ab53);">
+        <center><h1><font face="Bunch Blossoms Personal Use">urExam</font></h1></center>
         <center><?php echo "<h1>$exam_qry_result[1]</h1><br><h2>Marks: $exam_qry_result[3]<br>Time Left: <span id='timer'></span></h2>"?></center>
         <div id='test_div'>
             <form name='exam' method='POST' action = 'test_end.php'>                
@@ -63,16 +91,18 @@ $con=mysqli_connect("localhost","root","")or
             while($row = mysqli_fetch_array($ques_qry_result)){
                 $quebank_qry = "select * from question_bank where question_id='$row[1]'";
                 $quebank_qry_result = mysqli_fetch_array(mysqli_query($con,$quebank_qry));
-                echo "$count) $quebank_qry_result[2]<br><br>
-                <input type='radio' name='que$count' value='1'>(A) $quebank_qry_result[3]</input><br>
-                <input type='radio' name='que$count' value='2'>(B) $quebank_qry_result[4]</input><br>
-                <input type='radio' name='que$count' value='3'>(C) $quebank_qry_result[5]</input><br>
-                <input type='radio' name='que$count' value='4'>(D) $quebank_qry_result[6]</input><br><br>";
+                echo "<table>
+                <tr><th colspan='2'>$count) $quebank_qry_result[2]</th></tr>
+                <tr><td><input type='radio' name='que$count' value='1'>(A) $quebank_qry_result[3]</input></td>
+                <td><input type='radio' name='que$count' value='2'>(B) $quebank_qry_result[4]</input></td></tr>
+                <tr><td><input type='radio' name='que$count' value='3'>(C) $quebank_qry_result[5]</input></td>
+                <td><input type='radio' name='que$count' value='4'>(D) $quebank_qry_result[6]</input></td></tr>
+                </table><br>";
                 $count++;
             }
             ?>
 
-            <input type='submit' value='Submit Exam'></input>
+            <center><input type='submit' value='Submit Exam'></input></center>
             </form>
         </div>
     </body>

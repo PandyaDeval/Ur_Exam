@@ -15,7 +15,7 @@ if($gender=='student'){
 	}
 	else
 	{
-		echo"<script>alert('Incorrect Username or Password');</script>";
+		echo"<script>alert('Incorrect Username or Password');window.open('home.html','_self');</script>";
 	}
 
 }
@@ -28,7 +28,7 @@ else{
 	}
 	else
 	{
-		echo"<script>alert('Incorrect Username or Password');</script>";
+		echo"<script>alert('Incorrect Username or Password');window.open('home.html','_self');</script>";
 	}
 }
 ?>

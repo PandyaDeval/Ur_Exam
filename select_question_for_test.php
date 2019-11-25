@@ -13,6 +13,7 @@ table {
 
 th, td {
   padding: 15px;
+  width:50%;
 }
 input[type=submit], button {
                     background-color: #a10000; /* Green */

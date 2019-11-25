@@ -20,7 +20,7 @@
     echo "<center><b>USER INFORMATION</b><br><br>";
     
     //general information
-    echo "NAME : $user_info_row[3]<br><br>USERNAME : $user_info_row[1]<br><br>PASSWORD : $user_info_row[2]<br><br>EMAIL : $user_info_row[4]<br><br><br>";
+    echo "NAME : $user_info_row[3]<br><br>USERNAME : $user_info_row[1]<br><br>EMAIL : $user_info_row[4]<br><br><br>";
 
     //test results
     echo "<b>TEST STATISTICS</b><br><br>";

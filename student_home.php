@@ -22,6 +22,22 @@ $con=mysqli_connect("localhost","root","")or
 
 <html>
     <head>
+        <style>
+            a:link, a:visited, select, option, button {
+            background-color: #a10000;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5mm;
+            width: 400px;
+            }
+
+            a:hover, a:active {
+            background-color: #a10000;
+            }
+        </style>
         <script>
             function sub_select(){
                 var subject = document.getElementById("sub_select").value;
@@ -53,13 +69,13 @@ $con=mysqli_connect("localhost","root","")or
             }
         </script>
     </head>
-    <body>
+    <body style="background-image: linear-gradient(#F17153, #F58D63, #f1ab53);">
+<center><h1><font face="Bunch Blossoms Personal Use">urExam</font></h1></center>
         <center><h1>Welcome <?php echo $row[3];?></h1>
 
         <br><br>
 
         <div>
-            Select Subject:
             <select onchange = "sub_select()" id="sub_select">
                 <option value='blank'>Select Subject</option>
             <?php
@@ -75,7 +91,8 @@ $con=mysqli_connect("localhost","root","")or
         <br><br>
         <?php $user_id_row = mysqli_fetch_array(mysqli_query($con,$qry)); ?>
         <a href = "view_profile.php?id=<?php echo $user_id_row[0]?>">VIEW PROFILE</a> |
-        <a href = "edit_profile.php?id=<?php echo $user_id_row[0]?>">EDIT PROFILE</a>
+        <a href = "edit_profile.php?id=<?php echo $user_id_row[0]?>">EDIT PROFILE</a><br><br><br><br><br>
+        <a href='logout.php' style='width:20%'>Logout</a>
 
         </center>
     </body>

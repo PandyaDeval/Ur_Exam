@@ -40,7 +40,8 @@ echo "<center>";
 
 	echo "<h2>Welcome Admin : $username</h2><br><br>";
 	echo "<text style='font-size: 1.25em;'>Name : $name<br><br>E-mail : $email</text><br><br>     ";
-	?>
+  ?>
+  <a href='logout.php' style='width:50%'>Logout</a>
 </div>
 <div style="padding-left:300;padding-top:150;">
 <?php

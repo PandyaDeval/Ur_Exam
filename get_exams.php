@@ -11,7 +11,7 @@ $con=mysqli_connect("localhost","root","")or
 $qry = "select * from exam where subject = '$subject'";
 $qry_result = mysqli_query($con,$qry);
 
-echo "Select Exam: <select id='select_exam'>";
+echo "<select id='select_exam'>";
 while($row = mysqli_fetch_array($qry_result)){
     echo "<option value='$row[1]'>$row[1]</option>";
 }
