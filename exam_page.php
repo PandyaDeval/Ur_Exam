@@ -72,7 +72,7 @@ $con=mysqli_connect("localhost","root","")or
             }
             ?>
 
-            <input type='submit' value='Submut Exam'></input>
+            <input type='submit' value='Submit Exam'></input>
             </form>
         </div>
     </body>
