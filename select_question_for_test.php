@@ -1,11 +1,7 @@
 
 <style>
-<<<<<<< HEAD
-table, td, th, tr {  
-=======
 
 table, td, th {  
->>>>>>> d65b10c37b0fdfe64683983878ed5dbfbead628f
 border: 1px solid black;
   text-align: left;
 }
