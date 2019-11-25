@@ -6,7 +6,7 @@
     die("Could not select database.");
 
     $username = $_SESSION['username'];
-    echo "LOGGED IN : <a href = 'admin_home.php'>$username </a> ";
+    echo "LOGGED IN : $username";
 
     $user_id = $_GET['id'];
     

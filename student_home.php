@@ -69,11 +69,13 @@ $con=mysqli_connect("localhost","root","")or
             ?>
             </select>
         </div>
-        <br><br><br>
-        <div id='show_exams'>
-            
+        <br><br>
+        <div id='show_exams'>    
         </div>
-
+        <br><br>
+        <?php $user_id_row = mysqli_fetch_array(mysqli_query($con,$qry)); ?>
+        <a href = "view_profile.php?id=<?php echo $user_id_row[0]?>">VIEW PROFILE</a> |
+        <a href = "edit_profile.php?id=<?php echo $user_id_row[0]?>">EDIT PROFILE</a>
 
         </center>
     </body>
