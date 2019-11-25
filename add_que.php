@@ -17,11 +17,11 @@
 
     $add_que_qry = "insert into `question_bank` (subject,question,op_1,op_2,op_3,op_4,answer) values('$subject','$question','$opt1','$opt2','$opt3','$opt4','$answer')";
     if(mysqli_query($con,$add_que_qry)){
-        echo "<script>alert('QUESTION ADDED!');location.href('admin_home.php');</script>";
+        echo "<script>alert('QUESTION ADDED!');location = 'admin_home.php';</script>";
     }
     else {
         echo $add_que_qry;
-        echo "<script>alert('INSERTION FAILED!');location.href('admin_home.php');</script>";
+        echo "<script>alert('INSERTION FAILED!');location = 'admin_home.php';</script>";
     }
 
 ?>
