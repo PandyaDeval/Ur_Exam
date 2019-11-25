@@ -10,7 +10,7 @@ function add_que(a){
             cnt=cnt+1;
             document.getElementById(a).innerHTML = "Added";
             document.getElementById(a).disabled = true;
-            document.cookie="cnt_var = "+cnt;
+            document.getElementById("sel_ques").innerHTML=this.responseText;
             
         }
       }
@@ -37,7 +37,7 @@ $examid;
  }
  echo $examid;
 
-
+echo "<div id = 'sel_ques'> </div>";
 
  $fetch_question="SELECT  * FROM question_bank WHERE subject='$sub_name'";
  $result_question=mysqli_query($conn,$fetch_question);
@@ -51,10 +51,10 @@ $examid;
      $answer=$q_row["answer"];
     ?>
     <table>
-        <?php echo $question; ?>    
-        <tr><td><?php echo $op_1; ?></td><td><?php echo $op_2; ?></td></tr>
-        <tr><td><?php echo $op_3; ?></td><td><?php echo $op_4; ?></td></tr>
-        <tr><td><?php echo $answer; ?></td><td><button id="<?php echo $q_id; ?>" onclick=add_que(<?php echo $q_id; ?>) value="ADD">ADD</button></td></tr>
+        <tr><td colspan='2'><?php echo $question; ?></td></tr>    
+        <tr><td>A. <?php echo $op_1; ?></td><td>B. <?php echo $op_2; ?></td></tr>
+        <tr><td>C. <?php echo $op_3; ?></td><td>C. <?php echo $op_4; ?></td></tr>
+        <tr><td>Ans. <?php echo $answer; ?></td><td><button id="<?php echo $q_id; ?>" onclick=add_que(<?php echo $q_id; ?>) value="ADD">ADD</button></td></tr>
     </table>
     <?php
  }
