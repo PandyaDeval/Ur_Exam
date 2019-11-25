@@ -1,6 +1,11 @@
 
 <style>
+<<<<<<< HEAD
 table, td, th, tr {  
+=======
+
+table, td, th {  
+>>>>>>> d65b10c37b0fdfe64683983878ed5dbfbead628f
 border: 1px solid black;
   text-align: left;
 }
@@ -13,6 +18,19 @@ table {
 th, td {
   padding: 15px;
 }
+input[type=submit], button {
+                    background-color: #a10000; /* Green */
+                    border: none;
+                    border-radius: 5mm;
+                    color: white;
+                    padding: 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    }
 </style>
 
 <script>
@@ -53,7 +71,7 @@ $examid;
      $_SESSION["examid"]=$examid;
  }
 
-echo "<div id = 'sel_ques'> </div>";
+echo "<center><b><div id = 'sel_ques'> </div></b></center>";
 
  $fetch_question="SELECT  * FROM question_bank WHERE subject='$sub_name'";
  $result_question=mysqli_query($conn,$fetch_question);
@@ -67,16 +85,17 @@ echo "<div id = 'sel_ques'> </div>";
      $answer=$q_row["answer"];
     ?>
     <table>
-        <tr><td colspan='2'><?php echo $question; ?></td></tr>    
-        <tr><td>A. <?php echo $op_1; ?></td><td>B. <?php echo $op_2; ?></td></tr>
-        <tr><td>C. <?php echo $op_3; ?></td><td>C. <?php echo $op_4; ?></td></tr>
-        <tr><td>Ans. <?php echo $answer; ?></td><td><button id="<?php echo $q_id; ?>" onclick=add_que(<?php echo $q_id; ?>) value="ADD">ADD</button></td></tr>
-    </table>
+        <tr><td colspan='2'><b>Question :  </b><?php echo $question; ?></td></tr>    
+        <tr><td><b>A. </b><?php echo $op_1; ?></td><td><b>B. </b><?php echo $op_2; ?></td></tr>
+        <tr><td><b>C. </b><?php echo $op_3; ?></td><td><b>C. </b><?php echo $op_4; ?></td></tr>
+        <tr><td><b>Ans. </b><?php echo $answer; ?></td><td><button style="padding:7.5px;" id="<?php echo $q_id; ?>" onclick=add_que(<?php echo $q_id; ?>) value="ADD">ADD</button></td></tr>
+    </table><br>
     <?php
  }
 ?>
+<center>
 <form method="POST" action="add_marks.php">
     <input type="hidden" name="marks" value="<?php echo $_SESSION["TOTAL_MARKS"]; ?>" >
     <input type="submit" value="SUBMIT">
-</form>
+</form></center>
 </body>
