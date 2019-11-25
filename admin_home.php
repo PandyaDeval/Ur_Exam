@@ -47,7 +47,7 @@ echo "<center>";
 	
 	echo "<a href = ' add_que.html '>ADD QUESTION</a> <br><br>    ";
 	echo "<a href = ' test_adding.php '>ADD TEST</a>    <br><br> ";
-	echo "<a href = ' see_user.php '>MANIPULATE USER</a>     ";
+	echo "<a href = ' see_user.php '>USER PROFILE</a>     ";
 	
 
 	echo "</center>"

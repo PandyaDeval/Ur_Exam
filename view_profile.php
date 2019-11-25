@@ -1,3 +1,6 @@
+<body style="background-image: linear-gradient(#F17153, #F58D63, #f1ab53);">
+<center><h1><font face="Bunch Blossoms Personal Use">urExam</font></h1></center>
+
 <?php
     session_start();
 	$con=mysqli_connect("localhost","root","")or
@@ -56,3 +59,4 @@
 
     echo "</center>";
 ?>
+</body>
