@@ -48,7 +48,8 @@ $con=mysqli_connect("localhost","root","")or
 
             function start_exam(){
                 var exam = document.getElementById("select_exam").value;
-                location = "exam_page.php?exam="+exam;
+                var subject = document.getElementById("sub_select").value;
+                location = "exam_page.php?exam="+exam+"&subject="+subject;
             }
         </script>
     </head>
