@@ -1,3 +1,16 @@
+<html>
+    <head>
+        <script>
+            function check(){
+                if(confirm("ARE U SURE?")){
+                    return true;
+                }
+                else return false;
+            }
+        </script>
+    </head>
+</html>
+
 <?php
     session_start();
 	$con=mysqli_connect("localhost","root","")or
@@ -15,7 +28,7 @@
     while( $user_row = mysqli_fetch_array($user_qry_run) ){
 
         echo "<tr>";
-        echo "<td> $user_row[1] </td>   <td><a href = 'view_profile.php?id=$user_row[0]'> VIEW PROFILE </a></td>";
+        echo "<td> $user_row[1] </td>   <td><a href = 'view_profile.php?id=$user_row[0]'> VIEW PROFILE </a></td> <td> | <a href = 'delete_profile.php?id=$user_row[0]' onclick = 'return check()' >DELETE</a></td>";
         echo "</tr>";
     }
 
