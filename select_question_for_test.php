@@ -1,4 +1,20 @@
+<style>
+<style>
+table, td, th {  
+border: 1px solid black;
+  text-align: left;
+}
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+</style>
 <script>
 var cnt=0;
 function add_que(a){
@@ -18,7 +34,8 @@ function add_que(a){
       xmlhttp.send();
             }
 </script>
-
+<body style="background-image: linear-gradient(#F17153, #F58D63, #f1ab53);">
+<center><h1><font face="Bunch Blossoms Personal Use">urExam</font></h1></center>
 <?php
  session_start();
  $conn=mysqli_connect("localhost","root","") or die("Could Not Connect");
@@ -35,7 +52,6 @@ $examid;
      $examid=$row["exam_id"];
      $_SESSION["examid"]=$examid;
  }
- echo $examid;
 
 echo "<div id = 'sel_ques'> </div>";
 
@@ -63,3 +79,4 @@ echo "<div id = 'sel_ques'> </div>";
     <input type="hidden" name="marks" value="<?php echo $_SESSION["TOTAL_MARKS"]; ?>" >
     <input type="submit" value="SUBMIT">
 </form>
+</body>
