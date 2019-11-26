@@ -13,6 +13,11 @@ if($qry==0){
     $sub_name=$_POST["sub_name"];
     $duration=$_POST["duration"];
 
+    $qry=mysqli_fetch_array(mysqli_query($conn, "select count(*) from exam where name='$test_name' and subject='$sub_name'"))[0];
+    if($qry!=0){
+        echo "<script>alert('Test with same name already exists in $sub_name');location='test_adding.php';</script>";
+    }
+
     $_SESSION["test_name"]=$test_name;
     $_SESSION["sub_name"]=$sub_name;
     
