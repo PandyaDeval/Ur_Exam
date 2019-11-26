@@ -9,6 +9,10 @@ $con=mysqli_connect("localhost","root","")or
     $username = $_SESSION['username'];
     $exam = $_GET['exam'];
     $subject = $_GET['subject'];
+    $qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from user where username='$username'"))[0];
+    if($qry==0){
+    echo "<script>alert('Please login as a student');location='home.html';</script>";
+    }
     
     $exam_qry = "select * from exam where subject='$subject' and name='$exam'";
     $exam_qry_result = mysqli_fetch_array(mysqli_query($con, $exam_qry));

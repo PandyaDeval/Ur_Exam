@@ -6,6 +6,12 @@
 	die("Could not select database.");
 
     $username = $_SESSION['username'];
+
+    $qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from user where username='$username'"))[0];
+    if($qry==0){
+    echo "<script>alert('Please login as a student');location='home.html';</script>";
+    }
+    
     $email = $_POST['email'];
     $name = $_POST['name'];
     $password = $_POST['password'];

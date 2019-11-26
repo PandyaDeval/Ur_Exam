@@ -4,6 +4,11 @@
     mysqli_select_db($conn,"urexam");
     $username=$_SESSION["username"];
 
+    $qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from admin where username='$username'"))[0];
+if($qry==0){
+  echo "<script>alert('Please login as an admin');location='home.html';</script>";
+}
+
     $test_name=$_POST["test_name"];
     $sub_name=$_POST["sub_name"];
     $duration=$_POST["duration"];

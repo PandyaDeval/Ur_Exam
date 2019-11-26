@@ -39,6 +39,12 @@ a:hover, a:active {
     die("Could not select database.");
 
     $username = $_SESSION['username'];
+
+    $qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from admin where username='$username'"))[0];
+if($qry==0){
+  echo "<script>alert('Please login as an admin');location='home.html';</script>";
+}
+
     $user_qry = "select * from user";
     $user_qry_run = mysqli_query($con,$user_qry);
     echo "LOGGED IN : <a href = 'admin_home.php'>$username </a> ";

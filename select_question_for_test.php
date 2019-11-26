@@ -60,6 +60,11 @@ function add_que(a){
  $sub_name=$_SESSION["sub_name"];
  $marks=$_SESSION["marks"];
 
+ $qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from admin where username='$username'"))[0];
+if($qry==0){
+  echo "<script>alert('Please login as an admin');location='home.html';</script>";
+}
+
  $fetch_examid="SELECT * FROM exam WHERE name='$test_name' AND subject='$sub_name'";
  $result_examid=mysqli_query($conn,$fetch_examid);
 $examid;

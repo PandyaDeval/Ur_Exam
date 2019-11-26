@@ -23,6 +23,11 @@ die("Could not select database.");
 
 $username = $_SESSION['username'];
 
+$qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from admin where username='$username'"))[0];
+if($qry==0){
+  echo "<script>alert('Please login as an admin');location='home.html';</script>";
+}
+
 $admin_profile_query = "select * from admin where username = '$username'";
 $admin_profile_run=mysqli_query($con,$admin_profile_query);
 $admin_profile_row = mysqli_fetch_array($admin_profile_run);

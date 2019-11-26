@@ -7,6 +7,12 @@
 
     $username = $_SESSION['username'];
     $user_id = $_GET['id'];
+
+    $qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from user where username='$username'"))[0];
+    if($qry==0){
+    echo "<script>alert('Please login as a student');location='home.html';</script>";
+    }
+    
     $user_qry = "select * from user where user_id = '$user_id'";
     $user_row = mysqli_fetch_array(mysqli_query($con,$user_qry));
 ?>

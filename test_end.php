@@ -41,6 +41,11 @@ $username = $_SESSION['username'];
 $exam_id = $_SESSION['exam_id'];
 $marks = $_SESSION['marks'];
 
+$qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from user where username='$username'"))[0];
+    if($qry==0){
+    echo "<script>alert('Please login as a student');location='home.html';</script>";
+    }
+
 $count = "select count(*) from question where exam_id='$exam_id'";
 $count = mysqli_fetch_array(mysqli_query($con,$count));
 

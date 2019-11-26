@@ -8,6 +8,11 @@
     $username = $_SESSION['username'];
     $user_id = $_GET['id'];
 
+    $qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from admin where username='$username'"))[0];
+if($qry==0){
+  echo "<script>alert('Please login as an admin');location='home.html';</script>";
+}
+
     $delete_from_result_qry = "delete from result where user_id = '$user_id'";
     $delete_from_user_qry = "delete from user where user_id = '$user_id'";
 

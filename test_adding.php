@@ -4,6 +4,12 @@ $conn=mysqli_connect("localhost","root","") or die("Could Not Connect");
 mysqli_select_db($conn,"urexam");
 $username=$_SESSION["username"];
 $_SESSION["TOTAL_MARKS"]=0;
+
+$qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from admin where username='$username'"))[0];
+if($qry==0){
+  echo "<script>alert('Please login as an admin');location='home.html';</script>";
+}
+
 $fetch_subject="select distinct(subject) from question_bank";
 $result_subject=mysqli_query($conn,$fetch_subject);
 
