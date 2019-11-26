@@ -16,6 +16,12 @@ $con=mysqli_connect("localhost","root","")or
     
     $exam_qry = "select * from exam where subject='$subject' and name='$exam'";
     $exam_qry_result = mysqli_fetch_array(mysqli_query($con, $exam_qry));
+
+    $user_id = mysqli_fetch_array(mysqli_query($con,"select * from user where username='$username'"))[0];
+    $already_given_qry = mysqli_fetch_array(mysqli_query($con,"select count(*) from result where exam_id='$exam_qry_result[0]' and user_id='$user_id'"))[0];
+    if($already_given_qry!=0){
+        echo "<script>alert('You have already given this test.');window.close();</script>";
+    }
     
     $ques_qry = "select * from question where exam_id='$exam_qry_result[0]'";
     $ques_qry_result = mysqli_query($con, $ques_qry);

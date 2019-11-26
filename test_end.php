@@ -75,7 +75,7 @@ while($que=mysqli_fetch_array($exam_qry)){
 }
 echo "</table><br><br>";
 
-echo "<center><span style='font-size:150%;font-weight:bold;'>Marks obtained: $user_marks out of $marks</span><br><br> <button onclick='location=\"student_home.php\"'>Back to Home</button></center>";
+echo "<center><span style='font-size:150%;font-weight:bold;'>Marks obtained: $user_marks out of $marks</span><br><br> <button onclick='window.opener=null; window.close(); return false;'>Close this window</button></center>";
 
 $qry = "select * from user where username='$username'";
 $user_id = mysqli_fetch_array(mysqli_query($con,$qry))[0];

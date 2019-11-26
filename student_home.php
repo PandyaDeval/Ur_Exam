@@ -69,7 +69,8 @@ $con=mysqli_connect("localhost","root","")or
             function start_exam(){
                 var exam = document.getElementById("select_exam").value;
                 var subject = document.getElementById("sub_select").value;
-                location = "exam_page.php?exam="+exam+"&subject="+subject;
+                //window.open("exam_page.php?exam="+exam+"&subject="+subject);
+                window.open("exam_page.php?exam="+exam+"&subject="+subject, 'Exam Page', "height=640,width=960,toolbar=no,menubar=no,scrollbars=no,location=no,status=no");
             }
         </script>
     </head>
